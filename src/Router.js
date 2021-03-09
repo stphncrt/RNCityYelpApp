@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {CityList, RestaurantList, RestaurantDetail} from './pages';
+import {CityList, RestaurantList, RestaurantDetail, Api} from './pages';
 const Stack = createStackNavigator();
 
 const Router = () => {

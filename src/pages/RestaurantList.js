@@ -27,10 +27,16 @@ const RestaurantList = (props) => {
     const response = await axios.request(options);
     // console.log(response);
     setList(response.data);
-    console.log(list);
+    // console.log(list);
     setIsloading(false);
   };
+  let restaurant = [...list];
+  console.log(restaurant);
   const [isloading, setIsloading] = useState(true);
+
+  const nextPage = () => {
+    props.navigation.navigate('Details', {restaurant: restaurant});
+  };
   const renderList = ({item}) => (
     // isloading ? (
     //   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -38,7 +44,7 @@ const RestaurantList = (props) => {
     //   </View>
     // ) :
 
-    <RestList Restaurant={item.BusinessName} />
+    <RestList nextPage={nextPage} Restaurant={item.BusinessName} />
   );
   // };
   // const renderList = console.log('naber');

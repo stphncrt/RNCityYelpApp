@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const RestList = (props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}> {props.Restaurant} </Text>
-      <View style={styles.seperator} />
-    </View>
+    <TouchableOpacity onPress={props.nextPage}>
+      <View style={styles.container}>
+        <Text style={styles.text}> {props.Restaurant} </Text>
+        <View style={styles.seperator} />
+      </View>
+    </TouchableOpacity>
   );
 };
 

@@ -20,9 +20,9 @@ const CityList = (props) => {
     const response = await axios.request(options);
     console.log(response);
     setCityList(response.data);
-    originalList = [...response.data];
+    let originalList = [...response.data];
     // originalList = [...response.data];
-    // console.log(originalList);
+    console.log(originalList);
   };
 
   useEffect(() => {

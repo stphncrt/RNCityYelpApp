@@ -1,10 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 
 const RestaurantDetail = (props) => {
+  const restaurant = props.route.params.restaurant;
+  console.log(restaurant);
+
   return (
     <View>
-      <Text>Restaurant Detail</Text>
+      <FlatList
+        data={restaurant}
+        renderItem={({item}) => <Text>{item.AddressLine1}</Text>}
+      />
     </View>
   );
 };
